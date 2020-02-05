@@ -1,0 +1,119 @@
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+<!-- Add additional services you want to use -->
+
+
+<script>
+  // Initialize Firebase
+
+  //var firebase=require('firebase');
+  var config = {
+    apiKey: "AIzaSyAUqEPdNAR9S015OTsA_CBD79kyznEarF0",
+    authDomain: "edify-6c876.firebaseapp.com",
+    databaseURL: "https://edify-6c876.firebaseio.com",
+    projectId: "edify-6c876",
+    storageBucket: "edify-6c876.appspot.com",
+    messagingSenderId: "15052371556"
+  };
+  firebase.initializeApp(config);
+  
+
+    
+function retrieve_path_to_file(){
+
+    var a=document.getElementById("avatar");
+    //console.log(a.files.length);
+
+    for(i=0;i<a.files.length;i++){
+
+        //console.log(a.files[i]);
+        upload(a.files[i]);
+    }
+    //console.log("Sending",a.files[i]);
+    
+    //console.log("End of script");
+}
+
+function upload(file_to_upload){
+
+    // File or Blob named mountains.jpg
+    //console.log(file_to_upload);
+    var file = file_to_upload;
+
+    // Create the file metadata
+    var metadata = {
+      contentType: 'image/jpeg'
+    };
+    
+    //var storage=firebase.storage();
+    //consle.log("Storage",storage);
+    var storageRef = firebase.storage().ref("/uploads/");
+
+    // Upload file and metadata to the object 'images/mountains.jpg'
+    //console.log(file);
+    var uploadTask = storageRef.child('images/' + file.name).put(file, metadata);
+
+    // Listen for state changes, errors, and completion of the upload.
+    /*uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
+      function(snapshot) {
+        // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+        var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        //console.log('Upload is ' + progress + '% done');
+        switch (snapshot.state) {
+          case firebase.storage.TaskState.PAUSED: // or 'paused'
+            //console.log('Upload is paused');
+            break;
+          case firebase.storage.TaskState.RUNNING: // or 'running'
+            //console.log('Upload is running');
+            break;
+        }
+      }, function(error) {
+
+      // A full list of error codes is available at
+      // https://firebase.google.com/docs/storage/web/handle-errors
+      switch (error.code) {
+        case 'storage/unauthorized':
+          // User doesn't have permission to access the object
+          break;
+
+        case 'storage/canceled':
+          // User canceled the upload
+          break;
+
+        
+
+        case 'storage/unknown':
+          // Unknown error occurred, inspect error.serverResponse
+          break;
+      }
+    }, function() {
+      // Upload completed successfully, now we can get the download URL
+      uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+        //console.log('File available at', downloadURL);
+      });
+    });
+
+*/
+//console.log("Upload Complete");
+}
+
+</script>
+
+<fieldset>
+    <legend>Profile</legend>
+
+    <div>
+        <label for="name">Display name:</label>
+        <input type="text" id="name" name="name"/>
+    </div>
+
+    <div>
+        <label for="avatar">Profile picture:</label>
+        <input type="file"
+               id="avatar" name="avatar"
+               multiple
+               oninput="retrieve_path_to_file()" />
+    </div>
+
+</fieldset>

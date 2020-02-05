@@ -1,0 +1,48 @@
+
+Raj Kothari
+			
+Aiming to Solve Everyday Problems using innovation and Technology.
+
++91-9022058065
+rajk3770@gmail.com
+https://github.com/rajk3770  
+https://www.linkedin.com/in/raj-kothari-a656b2152/
+
+
+EDUCATION
+
+B.E In Information Technology
+Dwarkadas .J. Sanghvi College Of Engineering – Affiliated To Mumbai University
+CGPA : 9.51/10 (1st to 4th Semester)
+(Sem 1: 9.48 | Sem 2: 8.85 | Sem 3: 9.69 | Sem 4: 10.00)
+
+Higher Secondary School Certificate
+Tikumdas Purshotam Bhatia Junior College Of Science, Mumbai – HSC Board
+Score: 90.46%
+
+Secondary School Certificate
+St. Willibrords International School, Nallasopara, Mumbai – SSC Board
+Score:92.20%
+
+
+PROFESSIONAL WORK EXPERIENCE
+
+Byteridge (Jun 2018 - Aug 2018)
+Role: Developer Intern
+
+    • Trained a bot with DialogFlow and Integrated it with WebApp. 
+    • Developed a full-fletched Android App from scratch for situations when bot cannot answer and Chat is transferred to HR Manager.
+	
+TECHNICAL SKILLS
+
+Programming Languages : C, C++, Java, Python. 
+
+Web Technologies : HTML, CSS, JQuery, JavaScript, PHP, JSON, AJAX.
+
+.NET Technologies : ASP.NET, VB.NET, MVC, C#, Visual Basic.
+  
+API Development & Integrating Payment Gateways.
+
+Others: Android, Firebase, DialogFlow, SQL, Wordpress CMS Platform. (Hosted and maintained a website on WordPress Platform for few months)
+
+

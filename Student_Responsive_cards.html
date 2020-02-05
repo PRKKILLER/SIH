@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Edify</title>
+  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Playfair+Display:700|Raleway:500.700'>
+
+<link rel="stylesheet" href="css/landing_page_cards.css">
+
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css" />
+
+
+  <link rel='stylesheet' href='https://s3-us-west-2.amazonaws.com/s.cdpn.io/172203/smart-forms.css'>
+  <link rel='stylesheet' href='https://s3-us-west-2.amazonaws.com/s.cdpn.io/172203/font-awesome.min.css'>
+
+
+  <link href="../assets/css/material-dashboard.css?v=2.1.0" rel="stylesheet" />
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <link href="../assets/demo/demo0.css" rel="stylesheet" />
+
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css'>
+
+  <!-- <link rel="stylesheet" href="DatePicker/css/style.css"> -->
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+  <!--     Fonts and icons     -->
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="./Upload/css/style.css"> -->
+
+  <!--Firebase CDN's-->
+  <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-app.js"></script>
+  <!-- Add additional services you want to use -->
+  <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-database.js"></script>
+  <!--End of firebase-->
+
+
+
+<link href='https://fonts.googleapis.com/css?family=Average Sans' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Basic' rel='stylesheet'>
+<link href="./css/logo.css" rel="stylesheet" />
+
+<!--   Core JS Files   -->
+<script src="../assets/js/core/jquery.min.js"></script>
+<script src="../assets/js/core/popper.min.js"></script>
+<script src="../assets/js/core/bootstrap-material-design.min.js"></script>
+<script src="https://unpkg.com/default-passive-events"></script>
+<script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<!--  Google Maps Plugin    -->
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+<!-- Chartist JS -->
+<script src="../assets/js/plugins/chartist.min.js"></script>
+<!--  Notifications Plugin    -->
+<script src="../assets/js/plugins/bootstrap-notify.js"></script>
+<!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+<script src="../assets/js/material-dashboard.js?v=2.1.0"></script>
+<!-- Material Dashboard DEMO methods, don't include it in your project! -->
+<script src="../assets/demo/demo.js"></script>
+
+<style>
+  body{
+    font-family: Average Sans;
+
+  }
+
+  .card {
+  position: relative;
+  flex: 0 0 240px;
+  width: 200px;
+  height: 150px;
+  margin-left: 20px; 
+  background-color: #333;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.66) 0 30px 60px 0, inset #333 0 0 0 5px, inset rgba(255, 255, 255, 0.5) 0 0 0 6px;
+  transition: 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+</style>
+
+<script>
+  
+  // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAUqEPdNAR9S015OTsA_CBD79kyznEarF0",
+      authDomain: "edify-6c876.firebaseapp.com",
+      databaseURL: "https://edify-6c876.firebaseio.com",
+      projectId: "edify-6c876",
+      storageBucket: "edify-6c876.appspot.com",
+      messagingSenderId: "15052371556"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script>
+
+
+window.onresize = function(event){
+ 
+  if(window.innerWidth>400){
+    window.location = "student_upload_cards.html";
+  }
+}
+
+ function passValue(s){
+ 
+   alert(s);
+   window.parent.location="./student_first.html?subject="+s+"";
+
+ }
+
+  function signOut(){
+    firebase.auth().signOut().then(function() {
+ 
+  window.location="./login.html"
+    }, function(error) {
+  console.error('Sign Out Error', error);
+  });
+  }
+
+</script>
+  
+</head>
+
+<body class="light-edition">
+  <div class="wrapper ">
+    <div class="sidebar" data-color="black" data-background-color="white" >
+      <!--
+        Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+
+        Tip 2: you can also add an image using data-image tag
+    -->
+    <div class="logo">
+      <div class="thumbnail"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/hat.svg" /></div>
+
+      <h1 style="text-align:center; font-size:30px;padding:10px; color:black;
+      font-family: Basic;
+      ">Edify</h1>
+    </div>
+    <div class="sidebar-wrapper" background="white">
+      <ul class="nav">
+        <li class="nav-item  ">
+          <a class="nav-link" href="./student_attendance.html">
+            <i class="material-icons">today</i>
+            <p style="font-size:17px;">Attendance</p>
+          </a>
+        </li>
+        <li class="nav-item  ">
+          <a class="nav-link" href="./student_upload_cards.html">
+            <i class="material-icons">backup</i>
+            <p style="font-size:17px;">Uploads</p>
+          </a>
+        </li>
+        <li class="nav-item  ">
+          <a class="nav-link" href="./student_resume_search.html">
+            <i class="material-icons">assignment_ind</i>
+            <p style="font-size:17px;">Resume</p>
+          </a>
+        </li>
+        <li class="nav-item  ">
+          <a class="nav-link" href="./student_sharing.html">
+            <i class="material-icons">group</i>
+            <p style="font-size:17px;">Shared Docs</p>
+          </a>
+        </li>
+        <li class="nav-item  ">
+          <a class="nav-link" href="./student_feedback.html">
+            <i class="material-icons">thumb_up</i>
+            <p style="font-size:17px;">Feedback</p>
+          </a>
+        </li>
+        <li class="nav-item  ">
+            <a class="nav-link" href="./student_change_Password.html">
+              <i class="material-icons">exit_to_app</i>
+              <p style="font-size:17px;">Change Password</p>
+            </a>
+          </li>
+        <li class="nav-item  ">
+          <a class="nav-link" href="javascript:signOut();">
+            <i class="material-icons">exit_to_app</i>
+            <p style="font-size:17px;">Logout</p>
+          </a>
+        </li>
+        </ul>
+      </div>
+    </div>
+    <div class="main-panel">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top " id="navigation-example">
+        <div class="container-fluid">
+          <div class="navbar-wrapper">
+            <a class="navbar-brand" href="javascript:void(0)">Subjects</a>
+          </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation" data-target="#navigation-example">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end">
+         
+            <ul class="navbar-nav">
+            
+              <li class="nav-item">
+                <a class="nav-link" href="javascript:void(0)">
+                  <i class="material-icons" onclick="window.location='./student_user_profile.html'">person</i>
+                  <p class="d-lg-none d-md-block">
+                    Account
+                  </p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- End Navbar -->
+
+
+<div id="app" class="container">
+<card onclick="passValue('Software Engineering And Project Management')" data-image="https://images.unsplash.com/photo-1479660656269-197ebb83b540?dpr=2&auto=compress,format&fit=crop&w=1199&h=798&q=80&cs=tinysrgb&crop=">
+  <h1 slot="header">SEPM</h1>
+  <p slot="content">Software Engineering And Project Management</p>
+</card>
+<card onclick="passValue('Data Mining And Business Intelligence')" data-image="https://images.unsplash.com/photo-1479659929431-4342107adfc1?dpr=2&auto=compress,format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop=">
+  <h1 slot="header">DMBI</h1>
+  <p slot="content">Data Mining And Business Intelligence</p>
+</card>
+<card onclick="passValue('Cloud Computing Services')" data-image="https://images.unsplash.com/photo-1479644025832-60dabb8be2a1?dpr=2&auto=compress,format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop=">
+  <h1 slot="header">CCS</h1>
+  <p slot="content">Cloud Computing Services</p>
+</card>
+<card onclick="passValue('Wireless Networks')" data-image="https://images.unsplash.com/photo-1479621051492-5a6f9bd9e51a?dpr=2&auto=compress,format&fit=crop&w=1199&h=811&q=80&cs=tinysrgb&crop=">
+  <h1 slot="header">WN</h1>
+  <p slot="content">Wireless Networks</p>
+</card>
+  <card onclick="passValue('Advanced Internet Programming')" data-image="https://images.unsplash.com/photo-1479621051492-5a6f9bd9e51a?dpr=2&auto=compress,format&fit=crop&w=1199&h=811&q=80&cs=tinysrgb&crop=">
+  <h1 slot="header">AIP</h1>
+  <p slot="content">Advanced Internet Programming</p>
+</card>
+  <card onclick="passValue('Digital Forensics')" data-image="https://images.unsplash.com/photo-1479621051492-5a6f9bd9e51a?dpr=2&auto=compress,format&fit=crop&w=1199&h=811&q=80&cs=tinysrgb&crop=">
+  <h1 slot="header">DF</h1>
+  <p slot="content">Digital Forensics</p>
+</card>
+  <card onclick="passValue('Software Design Lab')" data-image="https://images.unsplash.com/photo-1479621051492-5a6f9bd9e51a?dpr=2&auto=compress,format&fit=crop&w=1199&h=811&q=80&cs=tinysrgb&crop=">
+  <h1 slot="header">SD lab</h1>
+  <p slot="content">Software Design Lab</p>
+</card>
+  <card onclick="passValue('Sensor Network Lab')" data-image="https://images.unsplash.com/photo-1479621051492-5a6f9bd9e51a?dpr=2&auto=compress,format&fit=crop&w=1199&h=811&q=80&cs=tinysrgb&crop=">
+  <h1 slot="header">SN lab</h1>
+  <p slot="content">Sensor Network Lab</p>
+</card>
+  <card onclick="passValue('Business Intelligence Lab')" data-image="https://images.unsplash.com/photo-1479621051492-5a6f9bd9e51a?dpr=2&auto=compress,format&fit=crop&w=1199&h=811&q=80&cs=tinysrgb&crop=">
+  <h1 slot="header">BI lab</h1>
+  <p slot="content">Business Intelligence Lab</p>
+</card>
+  </card>
+  <card onclick="passValue('Cloud Service Design Lab')" data-image="https://images.unsplash.com/photo-1479621051492-5a6f9bd9e51a?dpr=2&auto=compress,format&fit=crop&w=1199&h=811&q=80&cs=tinysrgb&crop=">
+  <h1 slot="header">CSD</h1>
+  <p slot="content">Cloud Service Design Lab</p>
+</card>
+  </card>
+  <card onclick="passValue('Software Architecture')" data-image="https://images.unsplash.com/photo-1479621051492-5a6f9bd9e51a?dpr=2&auto=compress,format&fit=crop&w=1199&h=811&q=80&cs=tinysrgb&crop=">
+  <h1 slot="header">SA</h1>
+  <p slot="content">Software Architecture</p>
+</card>
+</div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.1/vue.min.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>

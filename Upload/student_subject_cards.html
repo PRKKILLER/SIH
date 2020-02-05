@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>Hearthstone Style Card Hover</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+
+      <link rel="stylesheet" href="css/style.css">
+
+ <script>
+
+ function passValue(s){
+   //console.log("Click");
+   alert('hi');
+   window.parent.location="../student_first.html?subject="+s+"";
+
+ }
+ </script>
+ <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-app.js"></script>
+ <!-- Add additional services you want to use -->
+ <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-auth.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-database.js"></script>
+ <script>
+   // Initialize Firebase
+   var config = {
+     apiKey: "AIzaSyAUqEPdNAR9S015OTsA_CBD79kyznEarF0",
+     authDomain: "edify-6c876.firebaseapp.com",
+     databaseURL: "https://edify-6c876.firebaseio.com",
+     projectId: "edify-6c876",
+     storageBucket: "edify-6c876.appspot.com",
+     messagingSenderId: "15052371556"
+   };
+   firebase.initializeApp(config);
+ </script>
+</head>
+
+<body>
+
+    <div class='cards'>
+        <div class='card' onclick="passValue('Software Engineering With Project Management');">
+          <div class='card-face'>
+            <div class='card-label' >SEPM</div>
+          </div>
+        </div>
+        <div class='card' onclick="passValue('Data Mining And Business Intelligence');">
+          <div class='card-face'>
+            <div class='card-label' >DMBI</div>
+          </div>
+        </div>
+        <div class='card' onclick="passValue('Cloud Computing And Services');">
+          <div class='card-face'>
+            <div class='card-label'>CCS</div>
+          </div>
+        </div>
+        <div class='card' onclick="passValue('Wireless Networks');">
+          <div class='card-face'>
+            <div class='card-label' >WN</div>
+          </div>
+        </div>
+        <div class='card' onclick="passValue('Advance Internet Programming');">
+          <div class='card-face'>
+            <div class='card-label' >AIP</div>
+          </div>
+        </div>
+        <div class='card' onclick="passValue('Digital Forensics');">
+          <div class='card-face'>
+            <div class='card-label' >DF</div>
+          </div>
+        </div>
+        <div class='card' onclick="passValue('Software Design Lab');">
+          <div class='card-face'>
+            <div class='card-label' >SD Lab</div>
+          </div>
+        </div>
+        <div class='card' onclick="passValue('Sensor Network Lab');">
+          <div class='card-face'>
+            <div class='card-label' >SN lab</div>
+          </div>
+        </div>
+        <div class='card' onclick="passValue('Business Intelligence Lab');">
+          <div class='card-face'>
+            <div class='card-label' >BI Lab</div>
+          </div>
+        </div>
+        <div class='card' onclick="passValue('Cloud Service Design Lab');">
+          <div class='card-face' >
+            <div class='card-label' >CSD Lab</div>
+          </div>
+        </div>
+        <div class='card' onclick="passValue('Software Architecture');">
+          <div class='card-face' >
+            <div class='card-label' >SA</div>
+          </div>
+        </div>
+      </div>
+
+</body>
+
+</html>

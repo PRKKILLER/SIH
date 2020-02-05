@@ -1,0 +1,171 @@
+<html>
+
+<head>
+	<meta charset="utf-8">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,height=device-height">
+	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900'>
+	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat:400,700'>
+	<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+	<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-app.js"></script>
+	<!-- Add additional services you want to use -->
+	<script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-database.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css'>
+	<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js'></script>
+
+
+	<title>Login</title>
+	<link rel="stylesheet" href="./css/login.css">
+
+</head>
+
+<body height="100%">
+	<!-- <div class="header">login In</div> -->
+	<div class="container">
+		<div class="info">
+			<h1>Login</h1><span>Made with <i style="color:purple;" class="fa fa-heart"></i> by <a href="http://andytran.me"><b>Edify</b></a></span>
+		</div>
+	</div>
+	<div class="formcontainer">
+	<div class="form">
+		<div class="thumbnail"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/hat.svg" /></div>
+		<!-- <input id='txtEmail' class='text'  class='inc2' type="text" name="Username" placeholder='Username' value="">
+ <input id='txtPassword' class='pass'  class='inc1' type="password" name="Password" placeholder='Password' value="">
+ <button id='btnLogin' class='btn btn-action' >login In</button>
+ <button id='btnLogout' class="btn btn-action hide" style="display:none;">log out </button> -->
+		<!-- <form class="login-form">-->
+		<input id='txtEmail' class='text' class='inc2' type="text" name="Username" placeholder='Username' value="">
+		<input id='txtPassword' class='pass' class='inc1' type="password" name="Password" placeholder='Password' value="">
+		<button type="button" class="btn btn-basic btn-lg " id="load" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Signing In">login</button>
+		<button id='btnLogout' class="btn btn-action hide" style="display:none;">log out </button>
+	</div>
+</div>
+	<!-- </form> -->
+
+
+</body>
+<script>
+	//Initialize Firebase
+	give_alert=false;
+	var config = {
+		apiKey: "AIzaSyAUqEPdNAR9S015OTsA_CBD79kyznEarF0",
+		authDomain: "edify-6c876.firebaseapp.com",
+		databaseURL: "https://edify-6c876.firebaseio.com",
+		projectId: "edify-6c876",
+		storageBucket: "edify-6c876.appspot.com",
+		messagingSenderId: "15052371556"
+	};
+	firebase.initializeApp(config);
+
+	const txtEmail = document.getElementById('txtEmail');
+	const btnSignup = document.getElementById('btnSignup')
+	const txtPassword = document.getElementById('txtPassword');
+	const btnLogin = document.getElementById('load');
+	const btnLogout = document.getElementById('btnLogout');
+
+	$('.btn').on('click', function() {
+    $this = $(this);
+    //console.log($this);
+    //console.log("txtEmail = ",txtEmail.value);
+    //console.log("txtPassword = ",txtPassword.value);
+      if(txtEmail.value.length!=0 && txtPassword.value.length!=0){
+	  		$this.button('loading');
+	  }
+	  // $this.button('reset');
+	});
+
+
+	btnLogin.addEventListener('click', e => {
+		const email = txtEmail.value.concat("@edify.com");
+		//console.log(email)
+		const pass = txtPassword.value;
+		const auth = firebase.auth();
+		const promise = auth.signInWithEmailAndPassword(email, pass);
+		promise.catch(e =>{
+			alert(e.message)
+		    window.location.reload()
+
+		});
+
+
+	});
+
+	function segregate_teacher_student() {
+		var l = 0;
+		ref = new Firebase('https://edify-6c876.firebaseio.com');
+		ref = ref.child("Department").child("Information Technology").child("TE").child("Teacher_SAP");
+		ref.once("value", function (snapshot) {
+
+			teachers_sap = snapshot.val();
+			//console.log(teachers_sap);
+			for (x in teachers_sap) {
+				//console.log(x, txtEmail.value);
+				if (x == txtEmail.value) {
+					//console.log("Returning true");
+					//return true;
+					l = 1;
+
+
+				}
+			}
+			//console.log("Returning false");
+			//return false;
+			document.getElementById('btnLogout').style.display = "block";
+			document.getElementById('load').style.display = "none";
+			if (l == 0) {
+				window.location = "./student_upload_cards.html";
+			}
+			else {
+				window.location = "./teacher_upload_cards.html";
+			}
+
+
+
+		}, function (error) {
+
+			alert("Kuch toh gadbad hai Daya");
+
+		});
+	}
+
+	firebase.auth().onAuthStateChanged(firebaseUser => {
+		if (firebaseUser) {
+			segregate_teacher_student();
+			////console.log(is_teacher);
+			//	if(is_teacher){
+
+			//	}
+			//window.location="./upload_cards.html";
+			////console.log(firebaseUser);
+			//document.getElementById('btnLogout').style.display="block";
+			//document.getElementById('btnLogin').style.display="none";
+		}
+		else {
+			//console.log('not logged in');
+			if(give_alert){
+				alert('Incorrect Username or Password');
+			}
+			give_alert=true;
+			document.getElementById('btnLogout').style.display = "none";
+			document.getElementById('load').style.display = "block";
+
+
+		}
+	}
+	);
+	btnLogout.addEventListener('click', e => {
+		firebase.auth().signOut();
+	})
+
+
+
+</script>
+
+
+</html>

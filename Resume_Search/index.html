@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head style="width:100%">
+  <meta charset="UTF-8">
+  <title>Dropdown </title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js'></script>
+
+    <!-- <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script> -->
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.5.0/lodash.min.js'></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="HandheldFriendly" content="true">
+  <link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+
+
+  <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-app.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-storage.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-database.js"></script>
+
+  <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+
+
+
+      <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+
+
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.3.1/css/bulma.min.css'>
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+      <link rel="stylesheet" href="style.css">
+
+
+<!-- BS JavaScript -->
+
+<script>
+var config = {
+  apiKey: "AIzaSyAUqEPdNAR9S015OTsA_CBD79kyznEarF0",
+  authDomain: "edify-6c876.firebaseapp.com",
+  databaseURL: "https://edify-6c876.firebaseio.com",
+  projectId: "edify-6c876",
+  storageBucket: "edify-6c876.appspot.com",
+  messagingSenderId: "15052371556"
+};
+firebase.initializeApp(config);
+firebase.auth().onAuthStateChanged(function(user) {
+if (user) {
+  // User is signed in.
+  s=user.email;
+  loginid=s.slice(0,s.length-10);
+  alert(loginid)
+
+} else {
+  // No user is signed in.
+  //alert("You need to login first");
+loginid=60003160029
+}
+});
+</script>
+</head>
+
+<body style="width:100%">
+
+  <div id="app"></div>
+
+
+
+
+    <script  src="index.js"></script>
+    <div class="demo" ><button  class="rkmd-btn btn-white ripple-effect ripple-green" onclick="search()"><i class="material-icons right">send</i>Search</button>
+      <p id="warning"></p>
+    </div>
+
+  <div id="container">
+    <div class="list-view">
+      <ul id="list">
+
+
+        </ul>
+
+      </div>
+</div>
+
+
+<div  class="modal fade" id="open_file" role="dialog">
+  <div class="modal-dialog modal-lg" style="width:100%;height:100%">
+
+    <!-- Modal content-->
+    <div class="modal-content" style="height:700px;">
+      <div class="modal-header">
+        <h4 class="modal-title" id="file_title">Resume</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      
+      </div>
+      <div class="modal-body">
+        <div id="file_content" style="height:450px"></div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,626 @@
+/* @import "https://fonts.googleapis.com/css?family=Montserrat"; */
+body{background:#ffffff;
+  /* font-family:'Montserrat',sans-serif;*/
+  margin-top:0;}
+/* ff7f50 */
+.menu{width:450px;height:80px;margin:30px auto 0;cursor:pointer;position: relative;}
+.title{width:100%;height:70px;text-align:center;box-sizing:border-box;background:#ac0dbb;padding:14px;border-radius:4px;position:relative;  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);color:#505050}
+span{float:right;font-size:18px!important}
+.dropdown1{width:100%;border-radius:4px;box-shadow:0 0 40px -10px #000;color:#000000;margin-top:24px;max-height:0;transition:all .5s}
+.down{max-height:800px;}
+.arrow{border-left:10px solid transparent;border-right:10px solid transparent;border-bottom:10px solid #000;position:absolute;right:16px;bottom:-24px;display:none}
+.arrow.gone{display:block}
+#p1{padding:15px 14px;height:50px;margin:0;transition:all .1s}
+#p1:hover{background:#9F39B6; color:#ffffff;box-shadow:0 0 3px -1px #000}
+/* coral */
+/* rgba(255,255,255,0.8) */
+/* .plus_btn > input
+{
+    display:none;
+} */
+@media only screen and (max-width: 720px) {
+  .menu{width:320px}
+}
+@media only screen and (max-width: 450px) {
+  .menu{width:300px}
+}
+@media only screen and (max-width: 380px) {
+  .menu{width:250px}
+  }
+
+.navbar-toggler{
+  width:48px;
+}
+
+
+ input[type="file"]{
+   opacity: 0;
+   width:20px;
+  }
+
+ .img_plus{
+    vertical-align: top;
+ }
+ .Share{
+   width:200px;
+   z-index: -2;
+   height:30px;
+   margin-bottom: 0px;
+   margin-left: 470px;
+ }
+.main-panel{
+  height:100%;
+
+}
+.wrapper{
+  width:100%;
+}
+.wrapper_button {
+  position: absolute;
+  right: 40px;
+  top: 15px;
+
+ 
+
+}
+.wrapper_button .file-upload {
+  height: 30px;
+  width: 30px;
+  border-radius: 100px;
+  position: relative;
+  display: inherit;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #FFFFFF;
+  overflow: hidden;
+  background-image: linear-gradient(to bottom, #9F39B6 50%, #FFFFFF 50%);
+  background-size: 100% 200%;
+  transition: all 0.5s;
+  color: #FFFFFF;
+  font-size: 25px;
+}
+.wrapper_button .file-upload input[type='file'] {
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.wrapper_button .file-upload:hover {
+  background-position: 0 -100%;
+  color: #9F39B6;
+}
+
+
+.icon {
+  background-color: transparent;
+  border: 0;
+  color: #ac0dbb;
+  cursor: pointer;
+  bottom:8px;
+  font-size: 3px;
+  margin: 3em auto 0 auto;
+  position: relative;
+  width: 9em;
+  height: 9em;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.icon:focus {
+  /* This may be anti-A11Y, but just for this demo suppresses the annoyance */
+  outline: 0;
+}
+
+.icon div {
+  position: absolute;
+}
+
+.cloud {
+  transition: opacity 0.1s linear;
+}
+
+/* Cloud */
+.cloud {
+  top: 0;
+  width: 9em;
+  height: 5.8em;
+}
+.puff, .cloud-core {
+  background-color: #5fb3e6;
+}
+
+
+.puff {
+  border-radius: 50%;
+}
+
+.puff-1 {
+  top: 2.5em;
+  left: 0;
+  width: 3.3em;
+  height: 3.3em;
+}
+
+.puff-2 {
+  top: 1em;
+  left: 1.2em;
+  width: 3em;
+  height: 3em;
+}
+
+.puff-3 {
+  top: 0;
+  left: 3em;
+  width: 4.6em;
+  height: 4.6em;
+}
+
+.puff-4 {
+  top: 1.8em;
+  left: 5em;
+  width: 4em;
+  height: 4em;
+}
+
+.puff-5 {
+  top: 2.3em;
+  left: 2.4em;
+  width: 3.5em;
+  height: 3.5em;
+}
+
+.puff-6 {
+  top: 2.3em;
+  left: 3em;
+  width: 3.5em;
+  height: 3.5em;
+}
+
+.puff-7 {
+  top: 2.4em;
+  left: 1em;
+  width: 1.8em;
+  height: 1.8em;
+}
+
+.puff-8 {
+  top: 1.2em;
+  left: 2.5em;
+  width: 2em;
+  height: 2em;
+}
+
+.puff-9 {
+  top: 1.8em;
+  left: 5.5em;
+  width: 2em;
+  height: 2em;
+}
+
+.puff-10 {
+  top: 3.6em;
+  left: 3.5em;
+  width: 2.2em;
+  height: 2.2em;
+}
+
+.cloud-core {
+  top: 1.8em;
+  left: 1.8em;
+  width: 5em;
+  height: 4em;
+}
+
+.check {
+  top: 0;
+  left: 1.6em;
+  width: 5.8em;
+  height: 5.8em;
+  position: relative;
+  transform: scale(0);
+  z-index: -1;
+}
+
+.check:before, .check:after {
+  background-color: currentColor;
+  content: "";
+  bottom: 0;
+  display: block;
+  left: 2.5em;
+  position: absolute;
+  width: 0.8em;
+}
+
+.check:before {
+  height: 3em;
+  transform: rotate(-55deg);
+  transform-origin: 50% 2.6em;
+}
+
+.check:after {
+  height: 5.5em;
+  transform: rotate(35deg);
+  transform-origin: 50% 5.1em;
+}
+
+/* arroww */
+.arroww {
+  top: 3em;
+  left: 0;
+  width: 9em;
+  height: 5.3em;
+}
+
+.arroww div, .progress {
+  border-radius: 0.4em;
+}
+
+.arroww div {
+  background-color: currentColor;
+}
+
+.arroww-stem {
+  bottom: 0;
+  left: 4.1em;
+  width: 0.8em;
+  height: 5.3em;
+  transform-origin: 50% 100%;
+}
+
+.arroww-l-tip, .arroww-r-tip {
+  left: calc(50% - 0.4em);
+  bottom: 0;
+  width: 2.6em;
+  height: 0.8em;
+  transform-origin: 0.4em 50%;
+}
+
+.arroww-l-tip {
+  transform: rotate(-135deg);
+}
+
+.arroww-r-tip {
+  transform: rotate(-45deg);
+}
+
+.progress {
+  background-color: black;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0.8em;
+}
+
+/* Droplets */
+.preload, .drop {
+  transition: all 0.2s linear;
+}
+
+.preload {
+  animation: spin 1s linear infinite;
+  opacity: 0;
+  top: 2.9em;
+  left: calc(50% - 1.25em);
+  width: 2.5em;
+  height: 2.5em;
+  z-index: 1;
+}
+
+.drop {
+  background-color: currentColor;
+  background-image: radial-gradient(0.5em 0.5em at 30% 75%, white 45%, rgba(255, 255, 255, 0) 50%);
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+}
+
+.drop-1 {
+  transform: scaleY(0.75) rotate(135deg);
+}
+
+.drop-2 {
+  transform: rotate(120deg) scaleY(0.75) rotate(135deg);
+}
+
+.drop-3 {
+  transform: rotate(240deg) scaleY(0.75) rotate(135deg);
+}
+
+/** Animation **/
+.waiting, .running {
+  cursor: default;
+}
+
+/* Waiting */
+.waiting .cloud {
+  opacity: 0.15;
+}
+
+.waiting .preload {
+  opacity: 1;
+}
+
+.waiting .drop {
+  border-radius: 0 50% 50% 50%;
+}
+
+.waiting .drop-1 {
+  transform: translateY(2.5em) scaleY(0.75) rotate(135deg);
+}
+
+.waiting .drop-2 {
+  transform: rotate(120deg) translateY(2.5em) scaleY(0.75) rotate(135deg);
+}
+
+.waiting .drop-3 {
+  transform: rotate(240deg) translateY(2.5em) scaleY(0.75) rotate(135deg);
+}
+
+/* Running */
+.running .puff {
+  animation-duration: 0.75s;
+  animation-delay: 2.75s;
+  animation-timing-function: cubic-bezier(0.1, 0.8, 0.2, 0.95);
+}
+
+.running .puff-1 {
+  animation-name: puff1;
+}
+
+.running .puff-2 {
+  animation-name: puff2;
+}
+
+.running .puff-3 {
+  animation-name: puff3;
+}
+
+.running .puff-4 {
+  animation-name: puff4;
+}
+
+.running .puff-5 {
+  animation-name: puff5;
+}
+
+.running .puff-6 {
+  animation-name: puff6;
+}
+
+.running .puff-7 {
+  animation-name: puff7;
+}
+
+.running .puff-8 {
+  animation-name: puff8;
+}
+
+.running .puff-9 {
+  animation-name: puff9;
+}
+
+.running .puff-10 {
+  animation-name: puff10;
+}
+
+.running .cloud-core {
+  animation: core 2.75s;
+}
+
+.running .check {
+  animation: check 0.4s 2.75s;
+}
+
+.running .arroww {
+  animation: arroww 0.125s;
+}
+
+.running .arroww-stem {
+  animation: arrowwStem 0.125s;
+}
+
+.running .arroww-l-tip {
+  animation: arrowwLTip 0.375s 0.125s;
+}
+
+.running .arroww-r-tip {
+  animation: arrowwRTip 0.375s 0.125s;
+}
+
+.running .progress {
+  animation: filling 2s 0.75s;
+}
+
+.icon.running div {
+  animation-fill-mode: forwards;
+}
+
+.icon.running .cloud-core, .icon.running .check, .icon.running .arroww, .icon.running .arroww div, .icon.running .progress {
+  animation-timing-function: linear;
+}
+
+/* Keyframes */
+@keyframes puff1 {
+  from {
+    opacity: 1;
+    transform: translate(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-4em, 0) scale(0.1);
+  }
+}
+@keyframes puff2 {
+  from {
+    opacity: 1;
+    transform: translate(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-2em, -2em) scale(0.1);
+  }
+}
+@keyframes puff3 {
+  from {
+    opacity: 1;
+    transform: translate(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translate(2em, -4em) scale(0.1);
+  }
+}
+@keyframes puff4 {
+  from {
+    opacity: 1;
+    transform: translate(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translate(4em, 0) scale(0.1);
+  }
+}
+@keyframes puff5 {
+  from {
+    opacity: 1;
+    transform: translate(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-3.5em, 3.5em) scale(0.1);
+  }
+}
+@keyframes puff6 {
+  from {
+    opacity: 1;
+    transform: translate(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translate(3.5em, 3.5em) scale(0.1);
+  }
+}
+@keyframes puff7 {
+  from {
+    opacity: 1;
+    transform: translate(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-3em, -1.5em) scale(0.1);
+  }
+}
+@keyframes puff8 {
+  from {
+    opacity: 1;
+    transform: translate(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-0.5em, -2em) scale(0.1);
+  }
+}
+@keyframes puff9 {
+  from {
+    opacity: 1;
+    transform: translate(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translate(2em, -2em) scale(0.1);
+  }
+}
+@keyframes puff10 {
+  from {
+    opacity: 1;
+    transform: translate(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translate(0em, 2.5em) scale(0.1);
+  }
+}
+@keyframes core {
+  from {
+    visibility: visible;
+  }
+  to {
+    visibility: hidden;
+  }
+}
+@keyframes check {
+  from {
+    transform: scale(0);
+  }
+  30% {
+    transform: scale(1.2);
+  }
+  60% {
+    transform: scale(0.9);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes arroww {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(0.7em);
+  }
+}
+@keyframes arrowwStem {
+  from {
+    height: 5.3em;
+  }
+  to {
+    height: 0.8em;
+  }
+}
+@keyframes arrowwLTip {
+  from {
+    transform: rotate(-135deg);
+  }
+  50% {
+    width: 2.6em;
+    transform: rotate(-180deg);
+  }
+  to {
+    width: 4.9em;
+    transform: rotate(-180deg);
+  }
+}
+@keyframes arrowwRTip {
+  from {
+    transform: rotate(-45deg);
+  }
+  50% {
+    width: 2.6em;
+    transform: rotate(0deg);
+  }
+  to {
+    width: 4.9em;
+    transform: rotate(0deg);
+  }
+}
+@keyframes filling {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}

@@ -1,0 +1,63 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  /* font-family: 'Arial', sans-serif; */
+}
+
+.container{
+
+  padding-top: 500px;
+}
+.container h1 {
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 50px;
+}
+
+.nice-wrap {
+  position: relative;
+  width:100%;
+  height: 100px;
+  margin-top: 250px;
+  margin-right: 300px;
+}
+
+.nice-label {
+  position: absolute;
+  top: 15px;
+  left: 10px;
+  font-size: 16px;
+  color: #a0a0a0;
+  transition: all 0.25s ease;
+}
+.nice-label.focus {
+  top: -25px;
+  left: 5px;
+  font-size: 14px;
+  color: #000;
+}
+
+.nice-textbox {
+  position: relative;
+  display: block;
+  width: 500px;
+  margin-top: 50px;
+  padding: 15px;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-color: #000;
+  border-radius: 0px;
+  font-size: 16px;
+  color: #a0a0a0;
+  outline: none;
+}
