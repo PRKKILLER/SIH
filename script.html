@@ -1,0 +1,43 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-app.js"></script>
+<!-- Add additional services you want to use -->
+<script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-database.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAUqEPdNAR9S015OTsA_CBD79kyznEarF0",
+    authDomain: "edify-6c876.firebaseapp.com",
+    databaseURL: "https://edify-6c876.firebaseio.com",
+    projectId: "edify-6c876",
+    storageBucket: "edify-6c876.appspot.com",
+    messagingSenderId: "15052371556"
+  };
+  firebase.initializeApp(config);
+//  alert(firebase.auth().currentUser);
+var ref = new Firebase('https://edify-6c876.firebaseio.com');
+sub=["Cryptography And Network Security","Advanced Data Management Technology","Internet Programming","Microcontroller And Embedded Programming","IOT Lab","Security Lab","Advanced Data Structures And Analysis Of Algorithms","Internet Programming Lab","Business Communication And Ethics Lab","Online Analytical Processing Lab"];
+ref1=ref.child("Department").child("Information Technology").child("TE").child("Teachers_upload");
+ref=ref.child("Department").child("Information Technology").child("TE").child("Teachers_upload").child("Business Communication And Ethics");
+
+
+ref.once("value", function(snapshot) {
+
+  //console.log(snapshot.val());
+  for(i in sub){
+
+      ref1.child(sub[i]).set(snapshot.val());
+
+  }
+
+
+}, function (error) {
+
+
+
+ });
+
+
+
+</script>
